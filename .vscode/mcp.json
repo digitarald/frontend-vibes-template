@@ -1,0 +1,16 @@
+{
+  "servers": {
+    "fal-ai-image": {
+      "command": "npx",
+      "args": ["-y", "mcp-fal-ai-image"],
+      "env":{
+        "FAL_IMAGES_OUTPUT_DIR": "${workspaceFolder}"
+      },
+      "envFile": "${workspaceFolder}/.env.local"
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp@latest"]
+    }
+  }
+}
