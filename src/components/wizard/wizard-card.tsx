@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ProgressRing } from "@/components/ui/progress-ring";
@@ -87,26 +87,7 @@ export function WizardCard({ onComplete }: WizardCardProps) {
   const totalSteps = initialQuestions.length;
   const isLastStep = currentStep === totalSteps - 1;
 
-  useEffect(() => {
-    // Handle keyboard navigation
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "ArrowLeft" && currentStep > 0) {
-        goToPreviousStep();
-      } else if (e.key === "ArrowRight" && selectedOption && !isLastStep) {
-        goToNextStep();
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [currentStep, selectedOption, isLastStep]);
-
-  // Reset selected option when moving to a new question
-  useEffect(() => {
-    setSelectedOption(answers[currentQuestion.id] || null);
-  }, [currentStep, currentQuestion.id, answers]);
-
-  const goToNextStep = () => {
+  const goToNextStep = useCallback(() => {
     if (isAnimating) return;
 
     // Save current answer
@@ -142,9 +123,9 @@ export function WizardCard({ onComplete }: WizardCardProps) {
         }, 200);
       }
     }
-  };
+  }, [isAnimating, selectedOption, isLastStep, currentQuestion.id, answers, onComplete]);
 
-  const goToPreviousStep = () => {
+  const goToPreviousStep = useCallback(() => {
     if (isAnimating || currentStep === 0) return;
 
     // Animate card transition
@@ -167,7 +148,26 @@ export function WizardCard({ onComplete }: WizardCardProps) {
         }
       }, 200);
     }
-  };
+  }, [isAnimating, currentStep]);
+
+  useEffect(() => {
+    // Handle keyboard navigation
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "ArrowLeft" && currentStep > 0) {
+        goToPreviousStep();
+      } else if (e.key === "ArrowRight" && selectedOption && !isLastStep) {
+        goToNextStep();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [currentStep, selectedOption, isLastStep, goToNextStep, goToPreviousStep]);
+
+  // Reset selected option when moving to a new question
+  useEffect(() => {
+    setSelectedOption(answers[currentQuestion.id] || null);
+  }, [currentStep, currentQuestion.id, answers]);
 
   const handleOptionSelect = (optionId: string) => {
     setSelectedOption(optionId);
