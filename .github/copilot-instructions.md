@@ -13,26 +13,14 @@ Naming Conventions
 - Use lowercase with dashes for directories (e.g., components/auth-wizard).
 - Favor named exports for components.
 
-Tools
-- For placeholder images use the generate-image tool
-- For design review, use the browser_* tools (powered by playwright).
-
-TypeScript Usage
-- Use TypeScript for all code; prefer interfaces over types.
-- Avoid enums; use maps instead.
-- Use functional components with TypeScript interfaces.
+Recommended Tools
+- For placeholder images use the generate-image tool (by fal)
+- For design review, use the browser_* tools (by playwright)
 
 Syntax and Formatting
 - Use the "function" keyword for pure functions.
 - Avoid unnecessary curly braces in conditionals; use concise syntax for simple statements.
 - Use declarative JSX.
-
-UI and Styling
-- Use Shadcn UI components, managing installed components via /components.json and `npx shadcn@latest`
-- Use Lucide icons.
-- Use clsx for conditional class names.
-- Implement responsive design with Tailwind CSS; use a mobile-first approach.
-- Apply beautiful, balanced, and modern UI designs, imbued with best UX and typography practices.
 
 Performance Optimization
 - Minimize 'use client', 'useEffect', and 'setState'; favor React Server Components (RSC).

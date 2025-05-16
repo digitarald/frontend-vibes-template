@@ -3,7 +3,7 @@
     "fal-ai-image": {
       "command": "npx",
       "args": ["-y", "mcp-fal-ai-image"],
-      "env":{
+      "env": {
         "FAL_IMAGES_OUTPUT_DIR": "${workspaceFolder}"
       },
       "envFile": "${workspaceFolder}/.env.local"
@@ -11,6 +11,25 @@
     "playwright": {
       "command": "npx",
       "args": ["-y", "@playwright/mcp@latest"]
+    },
+    "Perplexity": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "PERPLEXITY_API_KEY",
+        "mcp/perplexity-ask"
+      ],
+      "envFile": "~/.env"
+    },
+    "shadcn": {
+      "command": "npx",
+      "args": ["-y", "shadcn@canary", "registry:mcp"],
+      "env": {
+        "REGISTRY_URL": "https://alpine-registry.vercel.app//r/registry.json"
+      }
     }
   }
 }
