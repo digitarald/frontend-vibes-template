@@ -1,44 +1,67 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Hello World - Starter Template',
-  description: 'A simple starter template built with Next.js, React, and Shadcn UI',
+  title: 'Frontend Vibes',
+  description: 'A modern web application built with Next.js, React, and Shadcn UI',
 };
 
 export default function Home() {
   return (
-    <div className="container flex items-center justify-center min-h-screen px-4 py-8">
-      <div className="w-full max-w-md p-6 bg-white rounded-lg shadow-md dark:bg-gray-800">
-        <div className="text-center">
-          <h1 className="text-2xl sm:text-3xl font-bold mb-2">Hello World</h1>
-          <p className="text-gray-500 dark:text-gray-400 mb-6">
-            Welcome to your Next.js starter template
-          </p>
-        </div>
-        
-        <div className="text-center">
-          <p className="mb-4">
-            This template includes TypeScript, Next.js App Router, React, 
-            and Tailwind CSS.
-          </p>
-          
-          <div className="grid grid-cols-2 gap-3 mt-6 text-sm">
-            <div className="flex flex-col items-center p-3 rounded-lg bg-gray-100 dark:bg-gray-700">
-              <span className="font-medium">Server Components</span>
-              <span className="text-xs text-gray-500 dark:text-gray-400">Next.js 14</span>
-            </div>
-            <div className="flex flex-col items-center p-3 rounded-lg bg-gray-100 dark:bg-gray-700">
-              <span className="font-medium">Styling</span>
-              <span className="text-xs text-gray-500 dark:text-gray-400">Tailwind CSS</span>
-            </div>
+    <div className="space-y-6">
+      <div>
+        <h1 className="text-3xl font-bold tracking-tight">Welcome to Frontend Vibes</h1>
+        <p className="text-muted-foreground">
+          A modern web application built with Next.js, React, and Shadcn UI
+        </p>
+      </div>
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="rounded-lg border bg-card text-card-foreground shadow">
+          <div className="p-6 flex flex-col space-y-2">
+            <h3 className="font-semibold">Next.js App Router</h3>
+            <p className="text-sm text-muted-foreground">
+              Built with the latest Next.js features for optimal performance
+            </p>
           </div>
         </div>
-        
-        <div className="mt-6">
-          <button className="w-full py-2 px-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors">
-            Get Started
-            <span className="ml-2">→</span>
-          </button>
+        <div className="rounded-lg border bg-card text-card-foreground shadow">
+          <div className="p-6 flex flex-col space-y-2">
+            <h3 className="font-semibold">Shadcn UI</h3>
+            <p className="text-sm text-muted-foreground">
+              Beautifully crafted UI components for modern applications
+            </p>
+          </div>
+        </div>
+        <div className="rounded-lg border bg-card text-card-foreground shadow">
+          <div className="p-6 flex flex-col space-y-2">
+            <h3 className="font-semibold">Tailwind CSS</h3>
+            <p className="text-sm text-muted-foreground">
+              Utility-first CSS framework for rapid development
+            </p>
+          </div>
+        </div>
+        <div className="rounded-lg border bg-card text-card-foreground shadow">
+          <div className="p-6 flex flex-col space-y-2">
+            <h3 className="font-semibold">TypeScript</h3>
+            <p className="text-sm text-muted-foreground">
+              Type-safe JavaScript for better developer experience
+            </p>
+          </div>
+        </div>
+        <div className="rounded-lg border bg-card text-card-foreground shadow">
+          <div className="p-6 flex flex-col space-y-2">
+            <h3 className="font-semibold">Sentry</h3>
+            <p className="text-sm text-muted-foreground">
+              Integrated error tracking and performance monitoring
+            </p>
+          </div>
+        </div>
+        <div className="rounded-lg border bg-card text-card-foreground shadow">
+          <div className="p-6 flex flex-col space-y-2">
+            <h3 className="font-semibold">React</h3>
+            <p className="text-sm text-muted-foreground">
+              Powered by React 19 for modern UI development
+            </p>
+          </div>
         </div>
       </div>
     </div>

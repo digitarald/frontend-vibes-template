@@ -1,35 +1,13 @@
 {
   "servers": {
-    "fal-ai-image": {
+    "Perplexity": {
       "command": "npx",
-      "args": ["-y", "mcp-fal-ai-image"],
-      "env": {
-        "FAL_IMAGES_OUTPUT_DIR": "${workspaceFolder}"
-      },
+      "args": ["-y", "server-perplexity-ask"],
       "envFile": "${workspaceFolder}/.env.local"
     },
-    "playwright": {
+    "context7": {
       "command": "npx",
-      "args": ["-y", "@playwright/mcp@latest"]
-    },
-    "Perplexity": {
-      "command": "docker",
-      "args": [
-        "run",
-        "-i",
-        "--rm",
-        "-e",
-        "PERPLEXITY_API_KEY",
-        "mcp/perplexity-ask"
-      ],
-      "envFile": "~/.env"
-    },
-    "shadcn": {
-      "command": "npx",
-      "args": ["-y", "shadcn@canary", "registry:mcp"],
-      "env": {
-        "REGISTRY_URL": "https://alpine-registry.vercel.app//r/registry.json"
-      }
+      "args": ["-y", "@upstash/context7-mcp@latest"]
     }
   }
 }
