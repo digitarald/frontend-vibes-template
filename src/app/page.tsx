@@ -7,62 +7,16 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold tracking-tight">Welcome to Frontend Vibes</h1>
-        <p className="text-muted-foreground">
-          A modern web application built with Next.js, React, and Shadcn UI
+    <div className="flex min-h-[50vh] items-center justify-center">
+      <div className="text-center space-y-4">
+        <h1 className="text-4xl font-bold tracking-tight">Frontend Vibes</h1>
+        <p className="text-muted-foreground text-lg">
+          Your application template is ready
         </p>
-      </div>
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <div className="rounded-lg border bg-card text-card-foreground shadow">
-          <div className="p-6 flex flex-col space-y-2">
-            <h3 className="font-semibold">Next.js App Router</h3>
-            <p className="text-sm text-muted-foreground">
-              Built with the latest Next.js features for optimal performance
-            </p>
-          </div>
-        </div>
-        <div className="rounded-lg border bg-card text-card-foreground shadow">
-          <div className="p-6 flex flex-col space-y-2">
-            <h3 className="font-semibold">Shadcn UI</h3>
-            <p className="text-sm text-muted-foreground">
-              Beautifully crafted UI components for modern applications
-            </p>
-          </div>
-        </div>
-        <div className="rounded-lg border bg-card text-card-foreground shadow">
-          <div className="p-6 flex flex-col space-y-2">
-            <h3 className="font-semibold">Tailwind CSS</h3>
-            <p className="text-sm text-muted-foreground">
-              Utility-first CSS framework for rapid development
-            </p>
-          </div>
-        </div>
-        <div className="rounded-lg border bg-card text-card-foreground shadow">
-          <div className="p-6 flex flex-col space-y-2">
-            <h3 className="font-semibold">TypeScript</h3>
-            <p className="text-sm text-muted-foreground">
-              Type-safe JavaScript for better developer experience
-            </p>
-          </div>
-        </div>
-        <div className="rounded-lg border bg-card text-card-foreground shadow">
-          <div className="p-6 flex flex-col space-y-2">
-            <h3 className="font-semibold">Sentry</h3>
-            <p className="text-sm text-muted-foreground">
-              Integrated error tracking and performance monitoring
-            </p>
-          </div>
-        </div>
-        <div className="rounded-lg border bg-card text-card-foreground shadow">
-          <div className="p-6 flex flex-col space-y-2">
-            <h3 className="font-semibold">React</h3>
-            <p className="text-sm text-muted-foreground">
-              Powered by React 19 for modern UI development
-            </p>
-          </div>
-        </div>
+        <div className="w-24 h-1 bg-primary mx-auto rounded"></div>
+        <p className="text-sm text-muted-foreground max-w-md">
+          Start building your next great project. This is your clean slate.
+        </p>
       </div>
     </div>
   );
