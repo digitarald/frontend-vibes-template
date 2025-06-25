@@ -2,6 +2,10 @@
 
 TypeScript, Next.js App Router, React 18, Shadcn UI, Sentry, and Tailwind 4.
 
+# Planning
+
+Use todo lists to break down planning and implementation tasks.
+
 # Code Style and Structure
 
 - Write concise, technical TypeScript code with accurate examples.
