@@ -2,7 +2,7 @@
 
 ## Stack
 
-Next.js 15 (App Router), React 19, TypeScript, Shadcn UI ("new-york" style), Tailwind 4, Sentry monitoring, OpenRouter/OpenAI integration.
+Next.js 15 (App Router), React 19, TypeScript, Shadcn UI ("new-york" style), Tailwind 4, OpenRouter/OpenAI integration.
 
 ## Development Server
 
@@ -32,8 +32,8 @@ Use todo lists to break down planning and implementation tasks.
 
 ## Error Monitoring Integration
 
-- **Sentry** pre-configured with server/edge/client instrumentation
-- Use LLM wrapper in `src/lib/llm.ts` for OpenRouter API calls with automatic error tracking
+- Error handling via console logging and custom error classes
+- Use LLM wrapper in `src/lib/llm.ts` for OpenRouter API calls with built-in error handling
 - Custom `OpenRouterError` class for LLM-specific error handling
 
 # Code Style and Structure
@@ -43,7 +43,6 @@ Use todo lists to break down planning and implementation tasks.
 - Prefer iteration and modularization over code duplication.
 - Use descriptive variable names with auxiliary verbs (e.g., isLoading, hasError).
 - Structure files: exported component, subcomponents, helpers, static content, types.
-- Include Sentry for error tracking and performance monitoring.
 
 # Naming Conventions
 
