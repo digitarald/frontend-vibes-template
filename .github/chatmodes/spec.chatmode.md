@@ -1,5 +1,5 @@
 ---
-mode: "agent"
+model: Claude Sonnet 4
 tools: ["editFiles", "fetch", "Perplexity", "Agent TODOs"]
 ---
 

@@ -1,10 +1,40 @@
-# Stack
+# Frontend Vibes - AI Coding Assistant Instructions
 
-TypeScript, Next.js App Router, React 18, Shadcn UI, Sentry, and Tailwind 4.
+## Stack
+
+Next.js 15 (App Router), React 19, TypeScript, Shadcn UI ("new-york" style), Tailwind 4, Sentry monitoring, OpenRouter/OpenAI integration.
+
+## Development Server
+
+- Use **Turbopack** for dev: `npm run dev` (already configured with `--turbopack` flag)
+- Images pre-configured for `images.unsplash.com` domain in `next.config.ts`
+
+## Architecture Patterns
+
+### Component Organization
+- **Layout Components**: `src/components/layout/` (e.g., `header.tsx` with NavigationMenu pattern)
+- **Feature Components**: Organize by feature in `src/components/[feature]/`
+- **UI Components**: Shadcn components in `src/components/ui/` managed via `components.json`
+
+### Responsive Design
+- **Mobile-first approach** with `useIsMobile` hook (`src/hooks/use-mobile.ts`)
+- Breakpoint: 768px (`MOBILE_BREAKPOINT = 768`)
+- Usage: `const isMobile = useIsMobile()` for conditional rendering
+
+### Color System
+- **OKLCH color space** in `globals.css` for better perceptual uniformity
+- CSS custom properties pattern: `--color-primary: oklch(0.63 0.17 149)`
+- Dark mode via `.dark` class with automatic variable switching
 
 # Planning
 
 Use todo lists to break down planning and implementation tasks.
+
+## Error Monitoring Integration
+
+- **Sentry** pre-configured with server/edge/client instrumentation
+- Use LLM wrapper in `src/lib/llm.ts` for OpenRouter API calls with automatic error tracking
+- Custom `OpenRouterError` class for LLM-specific error handling
 
 # Code Style and Structure
 
