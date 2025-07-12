@@ -1,5 +1,4 @@
 import OpenAI from 'openai';
-import * as Sentry from '@sentry/nextjs';
 
 // Custom error class for OpenRouter API issues
 export class OpenRouterError extends Error {
@@ -26,7 +25,7 @@ function createOpenRouterOpenAI({
 }: CreateOpenAIOptions = {}) {
   if (!apiKey) {
     const error = new OpenRouterError('Missing OPENROUTER_API_KEY');
-    Sentry.captureException(error);
+    console.error('OpenRouter API Key missing:', error);
     throw error;
   }
   
@@ -48,8 +47,8 @@ export async function createChatCompletion(
       `Chat completion failed: ${error instanceof Error ? error.message : 'Unknown error'}`,
       error
     );
-    Sentry.captureException(wrappedError, {
-      extra: { model: params.model, messages: params.messages.length },
+    console.error('Chat completion failed:', wrappedError, {
+      model: params.model, messages: params.messages.length
     });
     throw wrappedError;
   }
@@ -70,8 +69,8 @@ export async function createStreamingChatCompletion(
       `Streaming chat completion failed: ${error instanceof Error ? error.message : 'Unknown error'}`,
       error
     );
-    Sentry.captureException(wrappedError, {
-      extra: { model: params.model, messages: params.messages.length },
+    console.error('Streaming chat completion failed:', wrappedError, {
+      model: params.model, messages: params.messages.length
     });
     throw wrappedError;
   }
