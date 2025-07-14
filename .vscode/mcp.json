@@ -1,10 +1,10 @@
 {
   "servers": {
-    "Perplexity": {
-      "command": "npx",
-      "args": ["-y", "server-perplexity-ask"],
-      "envFile": "${workspaceFolder}/.env.local"
-    },
+    // "perplexity-search": {
+    //   "command": "npx",
+    //   "args": ["-y", "server-perplexity-ask"],
+    //   "envFile": "${workspaceFolder}/.env.local"
+    // },
     "context7": {
       "command": "npx",
       "args": ["-y", "@upstash/context7-mcp@latest"]
@@ -12,9 +12,9 @@
     "playwright": {
       "command": "npx",
       "args": ["@playwright/mcp@latest"]
-    },
-    "github": {
-      "url": "https://api.githubcopilot.com/mcp/"
     }
+    // "github": {
+    //   "url": "https://api.githubcopilot.com/mcp/"
+    // }
   }
 }
