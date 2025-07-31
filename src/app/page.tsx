@@ -212,12 +212,12 @@ export default function Home() {
             </p>
           </div>
           
-          <div style={{ background: 'white', borderRadius: '12px', padding: '40px', marginTop: '40px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)' }}>
+          <div className="code-demo">
             <div style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', gap: '20px', alignItems: 'center' }}>
               <div style={{ textAlign: 'center' }}>
                 <h4>Before: Custom Integration</h4>
-                <div style={{ background: '#fef2f2', padding: '20px', borderRadius: '8px', border: '2px solid #dc2626' }}>
-                  <pre style={{ fontSize: '0.8rem', color: '#dc2626' }}>{`// OpenAI Integration
+                <div className="code-block code-before">
+                  <pre>{`// OpenAI Integration
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_KEY,
   baseURL: 'https://api.openai.com/v1'
@@ -237,8 +237,8 @@ const anthropic = new Anthropic({
               
               <div style={{ textAlign: 'center' }}>
                 <h4>After: MCP Protocol</h4>
-                <div style={{ background: '#f0fdf4', padding: '20px', borderRadius: '8px', border: '2px solid #10b981' }}>
-                  <pre style={{ fontSize: '0.8rem', color: '#10b981' }}>{`// Universal MCP Interface
+                <div className="code-block code-after">
+                  <pre>{`// Universal MCP Interface
 const mcp = new MCPClient();
 
 // Works with any provider
@@ -362,32 +362,32 @@ const result = await mcp.complete({
           
           <div style={{ marginTop: '60px' }}>
             <div style={{ display: 'grid', gap: '40px' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '20px', alignItems: 'center' }}>
-                <div style={{ background: '#f97316', color: 'white', borderRadius: '50%', width: '60px', height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold' }}>1</div>
+              <div className="step-item">
+                <div className="step-number">1</div>
                 <div>
                   <h3>Install MCP Client</h3>
                   <p style={{ color: '#6b7280' }}>Add our lightweight SDK to your project. Zero configuration required.</p>
                 </div>
               </div>
               
-              <div style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '20px', alignItems: 'center' }}>
-                <div style={{ background: '#f97316', color: 'white', borderRadius: '50%', width: '60px', height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold' }}>2</div>
+              <div className="step-item">
+                <div className="step-number">2</div>
                 <div>
                   <h3>Connect Your Providers</h3>
                   <p style={{ color: '#6b7280' }}>Register your AI service credentials once through our secure protocol.</p>
                 </div>
               </div>
               
-              <div style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '20px', alignItems: 'center' }}>
-                <div style={{ background: '#f97316', color: 'white', borderRadius: '50%', width: '60px', height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold' }}>3</div>
+              <div className="step-item">
+                <div className="step-number">3</div>
                 <div>
                   <h3>Use Universal API</h3>
                   <p style={{ color: '#6b7280' }}>Call any AI service through our standardized interface. Same code, any provider.</p>
                 </div>
               </div>
               
-              <div style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '20px', alignItems: 'center' }}>
-                <div style={{ background: '#f97316', color: 'white', borderRadius: '50%', width: '60px', height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 'bold' }}>4</div>
+              <div className="step-item">
+                <div className="step-number">4</div>
                 <div>
                   <h3>Scale Effortlessly</h3>
                   <p style={{ color: '#6b7280' }}>Add new providers, features, and integrations without touching existing code.</p>
