@@ -45,7 +45,7 @@ export function Header({ navigationItems }: HeaderProps = {}) {
       <div className="container flex h-14 items-center">
         <div className="mr-4 hidden md:flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <span className="font-bold">Frontend Vibes</span>
+            <span className="font-bold">Model Context Protocol</span>
           </Link>
           <NavigationMenu>
             <NavigationMenuList>
@@ -93,16 +93,16 @@ export function Header({ navigationItems }: HeaderProps = {}) {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
-                  <Link href="/docs" className={navigationMenuTriggerStyle()}>
+                  <a href="https://github.com/modelcontextprotocol/specification" target="_blank" rel="noopener noreferrer" className={navigationMenuTriggerStyle()}>
                     Documentation
-                  </Link>
+                  </a>
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
-                  <Link href="/about" className={navigationMenuTriggerStyle()}>
-                    About
-                  </Link>
+                  <a href="https://github.com/modelcontextprotocol/servers" target="_blank" rel="noopener noreferrer" className={navigationMenuTriggerStyle()}>
+                    Servers
+                  </a>
                 </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>
@@ -122,26 +122,32 @@ export function Header({ navigationItems }: HeaderProps = {}) {
               <div className="py-4">
                 <div className="px-3 py-2">
                   <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">
-                    Frontend Vibes
+                    Model Context Protocol
                   </h2>
                   <nav className="flex flex-col space-y-1">
                     <Link
                       href="/"
                       className="flex items-center rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground"
                     >
-                      Dashboard
+                      Home
                     </Link>
                     <Link
-                      href="/about"
+                      href="https://github.com/modelcontextprotocol/specification"
                       className="flex items-center rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground"
                     >
-                      About
+                      Documentation
+                    </Link>
+                    <Link
+                      href="https://github.com/modelcontextprotocol/servers"
+                      className="flex items-center rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground"
+                    >
+                      Servers
                     </Link>
                     <Link
                       href="/settings"
                       className="flex items-center rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground"
                     >
-                      Settings
+                      GitHub
                     </Link>
                   </nav>
                 </div>
@@ -149,7 +155,7 @@ export function Header({ navigationItems }: HeaderProps = {}) {
             </SheetContent>
           </Sheet>
           <Link href="/" className="ml-4 flex items-center space-x-2">
-            <span className="font-bold">Frontend Vibes</span>
+            <span className="font-bold">Model Context Protocol</span>
           </Link>
         </div>
 
