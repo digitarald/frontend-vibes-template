@@ -27,14 +27,14 @@ interface HeaderProps {
 export function Header({ navigationItems }: HeaderProps = {}) {
   const defaultItems: NavigationItem[] = [
     {
-      title: "Dashboard",
-      href: "/",
-      description: "View your analytics and metrics",
+      title: "Server Directory",
+      href: "/servers",
+      description: "Browse 1000+ community-built MCP servers",
     },
     {
-      title: "Settings",
-      href: "/",
-      description: "Manage your preferences and account settings",
+      title: "Getting Started",
+      href: "/docs/getting-started",
+      description: "Learn how to build and deploy MCP servers",
     },
   ];
 
@@ -45,12 +45,12 @@ export function Header({ navigationItems }: HeaderProps = {}) {
       <div className="container flex h-14 items-center">
         <div className="mr-4 hidden md:flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <span className="font-bold">Frontend Vibes</span>
+            <span className="font-bold">MCP Ecosystem</span>
           </Link>
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Features</NavigationMenuTrigger>
+                <NavigationMenuTrigger>Explore</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                     <li className="row-span-3">
@@ -60,11 +60,10 @@ export function Header({ navigationItems }: HeaderProps = {}) {
                           className="flex h-full w-full flex-col justify-end rounded-md bg-gradient-to-b from-primary/50 to-primary p-6 no-underline outline-none focus:shadow-md"
                         >
                           <div className="mb-2 mt-4 text-lg font-medium text-white">
-                            Frontend Vibes
+                            MCP Ecosystem
                           </div>
                           <p className="text-sm leading-tight text-white/90">
-                            A modern React application using Next.js, Shadcn UI,
-                            and more.
+                            Join the growing community building the future of AI interactions with Model Context Protocol.
                           </p>
                         </Link>
                       </NavigationMenuLink>
@@ -93,15 +92,22 @@ export function Header({ navigationItems }: HeaderProps = {}) {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
-                  <Link href="/docs" className={navigationMenuTriggerStyle()}>
-                    Documentation
+                  <Link href="/servers" className={navigationMenuTriggerStyle()}>
+                    Servers
                   </Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
-                  <Link href="/about" className={navigationMenuTriggerStyle()}>
-                    About
+                  <Link href="/docs" className={navigationMenuTriggerStyle()}>
+                    Docs
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild>
+                  <Link href="/community" className={navigationMenuTriggerStyle()}>
+                    Community
                   </Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
@@ -122,26 +128,32 @@ export function Header({ navigationItems }: HeaderProps = {}) {
               <div className="py-4">
                 <div className="px-3 py-2">
                   <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">
-                    Frontend Vibes
+                    MCP Ecosystem
                   </h2>
                   <nav className="flex flex-col space-y-1">
                     <Link
                       href="/"
                       className="flex items-center rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground"
                     >
-                      Dashboard
+                      Home
                     </Link>
                     <Link
-                      href="/about"
+                      href="/servers"
                       className="flex items-center rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground"
                     >
-                      About
+                      Servers
                     </Link>
                     <Link
-                      href="/settings"
+                      href="/docs"
                       className="flex items-center rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground"
                     >
-                      Settings
+                      Documentation
+                    </Link>
+                    <Link
+                      href="/community"
+                      className="flex items-center rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground"
+                    >
+                      Community
                     </Link>
                   </nav>
                 </div>
@@ -149,7 +161,7 @@ export function Header({ navigationItems }: HeaderProps = {}) {
             </SheetContent>
           </Sheet>
           <Link href="/" className="ml-4 flex items-center space-x-2">
-            <span className="font-bold">Frontend Vibes</span>
+            <span className="font-bold">MCP Ecosystem</span>
           </Link>
         </div>
 
