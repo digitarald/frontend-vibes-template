@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import MCPEnterpriseLandingPage from '@/components/enterprise/complete-landing-page';
 
 export const metadata: Metadata = {
   title: 'MCP Enterprise - Standardize Your AI Infrastructure',
@@ -7,63 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-blue-950">
-      <div className="container mx-auto px-6 lg:px-8 py-20">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center px-4 py-2 mb-6 text-sm font-medium text-blue-700 bg-blue-50 border border-blue-200 rounded-lg dark:text-blue-300 dark:border-blue-800 dark:bg-blue-950">
-            🛡️ Enterprise-Grade AI Infrastructure
-          </div>
-          
-          <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-slate-900 dark:text-white mb-8">
-            Standardize Your{" "}
-            <span className="text-blue-600 dark:text-blue-400">
-              AI Infrastructure
-            </span>
-          </h1>
-          
-          <p className="text-xl lg:text-2xl text-slate-600 dark:text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Model Context Protocol (MCP) provides enterprise teams with a unified, 
-            secure framework for AI integration. Eliminate vendor lock-in while 
-            maintaining complete control over your AI infrastructure.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-            <button className="px-8 py-4 text-lg font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
-              Schedule Enterprise Demo →
-            </button>
-            <button className="px-8 py-4 text-lg font-semibold text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 transition-colors dark:text-slate-300 dark:bg-slate-800 dark:border-slate-600 dark:hover:bg-slate-700">
-              Start Enterprise Trial
-            </button>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
-            <div className="flex flex-col items-center">
-              <div className="bg-blue-100 dark:bg-blue-900 rounded-full p-3 mb-3">
-                ⚡
-              </div>
-              <h3 className="font-semibold text-slate-900 dark:text-white mb-1">Rapid Deployment</h3>
-              <p className="text-sm text-slate-600 dark:text-slate-400">Production-ready in hours, not months</p>
-            </div>
-            
-            <div className="flex flex-col items-center">
-              <div className="bg-blue-100 dark:bg-blue-900 rounded-full p-3 mb-3">
-                🛡️
-              </div>
-              <h3 className="font-semibold text-slate-900 dark:text-white mb-1">Enterprise Security</h3>
-              <p className="text-sm text-slate-600 dark:text-slate-400">SOC 2 compliant with end-to-end encryption</p>
-            </div>
-            
-            <div className="flex flex-col items-center">
-              <div className="bg-blue-100 dark:bg-blue-900 rounded-full p-3 mb-3">
-                👥
-              </div>
-              <h3 className="font-semibold text-slate-900 dark:text-white mb-1">Team Scalability</h3>
-              <p className="text-sm text-slate-600 dark:text-slate-400">Support thousands of users seamlessly</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+  return <MCPEnterpriseLandingPage />;
 }
