@@ -253,11 +253,9 @@ export function EarlyAdopters({}: EarlyAdoptersProps) {
                   </p>
                   
                   <div className="flex items-center">
-                    <img 
-                      src={testimonial.avatar} 
-                      alt={testimonial.author}
-                      className="w-12 h-12 rounded-full mr-4"
-                    />
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 flex items-center justify-center text-white font-bold mr-4">
+                      {testimonial.author.split(' ').map(n => n[0]).join('')}
+                    </div>
                     <div>
                       <div className="text-white font-medium">{testimonial.author}</div>
                       <div className="text-slate-400 text-sm">

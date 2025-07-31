@@ -125,7 +125,6 @@ export function ThoughtLeadership({}: ThoughtLeadershipProps) {
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-3">
                   <Avatar className="w-10 h-10">
-                    <AvatarImage src={`https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face`} />
                     <AvatarFallback className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white">
                       {insight.author.split(' ').map(n => n[0]).join('')}
                     </AvatarFallback>
@@ -173,7 +172,6 @@ export function ThoughtLeadership({}: ThoughtLeadershipProps) {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
                     <Avatar className="w-8 h-8">
-                      <AvatarImage src={`https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=32&h=32&fit=crop&crop=face`} />
                       <AvatarFallback className="bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs">
                         {insight.author.split(' ').map(n => n[0]).join('')}
                       </AvatarFallback>
