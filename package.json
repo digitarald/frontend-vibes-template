@@ -66,8 +66,20 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.3.5",
+    "lightningcss": "^1.19.0",
     "tailwindcss": "^4",
     "tw-animate-css": "^1.3.5",
     "typescript": "^5"
+  },
+  "optionalDependencies": {
+    "lightningcss-darwin-arm64": "^1.19.0",
+    "lightningcss-darwin-x64": "^1.19.0",
+    "lightningcss-freebsd-x64": "^1.19.0",
+    "lightningcss-linux-arm-gnueabihf": "^1.19.0",
+    "lightningcss-linux-arm64-gnu": "^1.19.0",
+    "lightningcss-linux-arm64-musl": "^1.19.0",
+    "lightningcss-linux-x64-gnu": "^1.19.0",
+    "lightningcss-linux-x64-musl": "^1.19.0",
+    "lightningcss-win32-x64-msvc": "^1.19.0"
   }
 }
