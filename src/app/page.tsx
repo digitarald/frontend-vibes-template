@@ -1,23 +1,25 @@
 import { Metadata } from 'next';
+import { HeroSection } from '@/components/mcp/hero-section';
+import { InnovationShowcase } from '@/components/mcp/innovation-showcase';
+import { TechnologyRoadmap } from '@/components/mcp/technology-roadmap';
+import { ThoughtLeadership } from '@/components/mcp/thought-leadership';
+import { EarlyAdopters } from '@/components/mcp/early-adopters';
+import { PartnershipOpportunities } from '@/components/mcp/partnership-opportunities';
 
 export const metadata: Metadata = {
-  title: 'Frontend Vibes',
-  description: 'A modern web application built with Next.js, React, and Shadcn UI',
+  title: 'MCP - Pioneer the Future of AI Connectivity',
+  description: 'Join the Model Context Protocol revolution. Next-generation AI agent ecosystems and standardized AI connectivity for forward-thinking innovators.',
 };
 
 export default function Home() {
   return (
-    <div className="flex min-h-[50vh] items-center justify-center">
-      <div className="text-center space-y-4">
-        <h1 className="text-4xl font-bold tracking-tight">Frontend Vibes</h1>
-        <p className="text-muted-foreground text-lg">
-          Your application template is ready
-        </p>
-        <div className="w-24 h-1 bg-primary mx-auto rounded"></div>
-        <p className="text-sm text-muted-foreground max-w-md">
-          Start building your next great project. This is your clean slate.
-        </p>
-      </div>
+    <div className="min-h-screen">
+      <HeroSection />
+      <InnovationShowcase />
+      <TechnologyRoadmap />
+      <ThoughtLeadership />
+      <EarlyAdopters />
+      <PartnershipOpportunities />
     </div>
   );
 }
