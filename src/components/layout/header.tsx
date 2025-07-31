@@ -45,7 +45,7 @@ export function Header({ navigationItems }: HeaderProps = {}) {
       <div className="container flex h-14 items-center">
         <div className="mr-4 hidden md:flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <span className="font-bold">Frontend Vibes</span>
+            <span className="font-bold">MCP Enterprise</span>
           </Link>
           <NavigationMenu>
             <NavigationMenuList>
@@ -60,11 +60,11 @@ export function Header({ navigationItems }: HeaderProps = {}) {
                           className="flex h-full w-full flex-col justify-end rounded-md bg-gradient-to-b from-primary/50 to-primary p-6 no-underline outline-none focus:shadow-md"
                         >
                           <div className="mb-2 mt-4 text-lg font-medium text-white">
-                            Frontend Vibes
+                            MCP Enterprise
                           </div>
                           <p className="text-sm leading-tight text-white/90">
-                            A modern React application using Next.js, Shadcn UI,
-                            and more.
+                            Standardize your AI infrastructure with enterprise-grade
+                            security and scalability.
                           </p>
                         </Link>
                       </NavigationMenuLink>
@@ -122,7 +122,7 @@ export function Header({ navigationItems }: HeaderProps = {}) {
               <div className="py-4">
                 <div className="px-3 py-2">
                   <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">
-                    Frontend Vibes
+                    MCP Enterprise
                   </h2>
                   <nav className="flex flex-col space-y-1">
                     <Link
@@ -149,7 +149,7 @@ export function Header({ navigationItems }: HeaderProps = {}) {
             </SheetContent>
           </Sheet>
           <Link href="/" className="ml-4 flex items-center space-x-2">
-            <span className="font-bold">Frontend Vibes</span>
+            <span className="font-bold">MCP Enterprise</span>
           </Link>
         </div>
 
