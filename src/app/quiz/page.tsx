@@ -1,24 +1,33 @@
-import { Metadata } from 'next';
+'use client';
+
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { Badge } from '@/components/ui/badge';
-import { Brain, Target, TrendingUp, Clock, BookOpen, Award } from 'lucide-react';
-
-export const metadata: Metadata = {
-  title: 'PADI Open Water Adaptive Quiz - Learn Smarter',
-  description: 'Personalized learning quiz for PADI Open Water certification with adaptive difficulty and spaced repetition',
-};
+import { Brain, Target, TrendingUp, Clock, BookOpen, Award, RefreshCw, Trash2 } from 'lucide-react';
+import { loadMockUserDataIntoStorage, clearUserData, getDemoUserStats } from '@/data/mock-user-data';
 
 export default function QuizHomePage() {
-  // Mock data for demonstration
-  const userStats = {
-    questionsAnswered: 127,
-    overallAccuracy: 78,
-    studyStreak: 5,
-    masteryLevel: 68,
-    timeSpent: 245, // minutes
+  const [isLoaded, setIsLoaded] = useState(false);
+  const userStats = getDemoUserStats();
+
+  useEffect(() => {
+    // Load mock data for demo
+    loadMockUserDataIntoStorage();
+    setIsLoaded(true);
+  }, []);
+
+  const handleLoadDemoData = () => {
+    clearUserData();
+    loadMockUserDataIntoStorage();
+    window.location.reload();
+  };
+
+  const handleClearData = () => {
+    clearUserData();
+    window.location.reload();
   };
 
   const recentTopics = [
@@ -27,11 +36,46 @@ export default function QuizHomePage() {
     { name: 'Equipment Knowledge', accuracy: 91, improvement: '+3%' },
   ];
 
+  if (!isLoaded) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-gray-900 dark:to-blue-950 flex items-center justify-center">
+        <div className="text-center">
+          <div className="text-lg font-semibold">Loading PADI Adaptive Quiz...</div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-gray-900 dark:to-blue-950">
       <div className="container mx-auto px-4 py-8 max-w-6xl">
         {/* Header */}
         <div className="text-center mb-8">
+          <div className="flex items-center justify-center gap-2 mb-2">
+            <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-300">
+              🎯 Demo Mode
+            </Badge>
+            <div className="flex gap-2">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={handleLoadDemoData}
+                className="text-xs"
+              >
+                <RefreshCw className="h-3 w-3 mr-1" />
+                Reload Demo Data
+              </Button>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={handleClearData}
+                className="text-xs"
+              >
+                <Trash2 className="h-3 w-3 mr-1" />
+                Clear All Data
+              </Button>
+            </div>
+          </div>
           <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
             PADI Open Water <span className="text-blue-600">Adaptive Quiz</span>
           </h1>

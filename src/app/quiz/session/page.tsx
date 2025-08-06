@@ -20,6 +20,7 @@ import {
 } from 'lucide-react';
 import { QuizQuestion, UserAnswer, TOPIC_LABELS } from '@/types/quiz';
 import { AdaptiveQuizEngine } from '@/lib/quiz/adaptive-engine';
+import { loadMockUserDataIntoStorage } from '@/data/mock-user-data';
 
 interface QuizSessionState {
   currentQuestion: QuizQuestion | null;
@@ -52,6 +53,7 @@ export default function QuizSessionPage() {
 
   // Initialize quiz session
   useEffect(() => {
+    loadMockUserDataIntoStorage(); // Ensure demo data is available
     quizEngine.loadUserData();
     const firstQuestion = quizEngine.getNextQuestion();
     if (firstQuestion) {

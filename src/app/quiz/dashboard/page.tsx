@@ -22,6 +22,7 @@ import {
 } from 'lucide-react';
 import { AdaptiveQuizEngine } from '@/lib/quiz/adaptive-engine';
 import { TOPIC_LABELS, RecommendationItem } from '@/types/quiz';
+import { loadMockUserDataIntoStorage } from '@/data/mock-user-data';
 
 export default function QuizDashboardPage() {
   const [quizEngine] = useState(() => new AdaptiveQuizEngine());
@@ -31,6 +32,7 @@ export default function QuizDashboardPage() {
 
   useEffect(() => {
     const loadData = async () => {
+      loadMockUserDataIntoStorage(); // Ensure demo data is available
       quizEngine.loadUserData();
       const analyticsData = quizEngine.getAnalytics();
       const recommendationsData = quizEngine.generateRecommendations();
