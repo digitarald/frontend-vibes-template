@@ -1,5 +1,5 @@
 ---
-tools: ['codebase', 'usages', 'problems', 'openSimpleBrowser', 'githubRepo', 'todos', 'runCommands', 'runTasks', 'editFiles', 'search', 'research']
+tools: ['codebase', 'usages', 'problems', 'changes', 'openSimpleBrowser', 'fetch', 'runCommands', 'runTasks', 'editFiles', 'search', 'perplexity', 'playwright', 'github', 'Todos']
 description: Explore feature ideas to later prototype.
 model: Claude Sonnet 4
 ---
