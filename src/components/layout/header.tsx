@@ -27,6 +27,11 @@ interface HeaderProps {
 export function Header({ navigationItems }: HeaderProps = {}) {
   const defaultItems: NavigationItem[] = [
     {
+      title: "Quiz",
+      href: "/quiz",
+      description: "PADI Open Water quiz with spaced repetition",
+    },
+    {
       title: "Dashboard",
       href: "/",
       description: "View your analytics and metrics",
@@ -100,6 +105,13 @@ export function Header({ navigationItems }: HeaderProps = {}) {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
+                  <Link href="/quiz" className={navigationMenuTriggerStyle()}>
+                    Quiz
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild>
                   <Link href="/about" className={navigationMenuTriggerStyle()}>
                     About
                   </Link>
@@ -130,6 +142,12 @@ export function Header({ navigationItems }: HeaderProps = {}) {
                       className="flex items-center rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground"
                     >
                       Dashboard
+                    </Link>
+                    <Link
+                      href="/quiz"
+                      className="flex items-center rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground"
+                    >
+                      Quiz
                     </Link>
                     <Link
                       href="/about"
