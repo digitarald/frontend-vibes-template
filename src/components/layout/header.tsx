@@ -29,12 +29,12 @@ export function Header({ navigationItems }: HeaderProps = {}) {
     {
       title: "Dashboard",
       href: "/",
-      description: "View your analytics and metrics",
+      description: "View your progress and take daily quizzes",
     },
     {
-      title: "Settings",
+      title: "Topics",
       href: "/",
-      description: "Manage your preferences and account settings",
+      description: "Explore PADI certification topics",
     },
   ];
 
@@ -45,7 +45,7 @@ export function Header({ navigationItems }: HeaderProps = {}) {
       <div className="container flex h-14 items-center">
         <div className="mr-4 hidden md:flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <span className="font-bold">Frontend Vibes</span>
+            <span className="font-bold">PADI Quiz Pro</span>
           </Link>
           <NavigationMenu>
             <NavigationMenuList>
@@ -60,11 +60,10 @@ export function Header({ navigationItems }: HeaderProps = {}) {
                           className="flex h-full w-full flex-col justify-end rounded-md bg-gradient-to-b from-primary/50 to-primary p-6 no-underline outline-none focus:shadow-md"
                         >
                           <div className="mb-2 mt-4 text-lg font-medium text-white">
-                            Frontend Vibes
+                            PADI Quiz Pro
                           </div>
                           <p className="text-sm leading-tight text-white/90">
-                            A modern React application using Next.js, Shadcn UI,
-                            and more.
+                            Master your Open Water certification with gamified daily quizzes.
                           </p>
                         </Link>
                       </NavigationMenuLink>
@@ -122,7 +121,7 @@ export function Header({ navigationItems }: HeaderProps = {}) {
               <div className="py-4">
                 <div className="px-3 py-2">
                   <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">
-                    Frontend Vibes
+                    PADI Quiz Pro
                   </h2>
                   <nav className="flex flex-col space-y-1">
                     <Link
@@ -149,7 +148,7 @@ export function Header({ navigationItems }: HeaderProps = {}) {
             </SheetContent>
           </Sheet>
           <Link href="/" className="ml-4 flex items-center space-x-2">
-            <span className="font-bold">Frontend Vibes</span>
+            <span className="font-bold">PADI Quiz Pro</span>
           </Link>
         </div>
 
