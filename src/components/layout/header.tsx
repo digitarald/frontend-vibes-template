@@ -27,14 +27,14 @@ interface HeaderProps {
 export function Header({ navigationItems }: HeaderProps = {}) {
   const defaultItems: NavigationItem[] = [
     {
-      title: "Dashboard",
-      href: "/",
-      description: "View your analytics and metrics",
+      title: "Hand Signal Drills",
+      href: "/quiz/signals",
+      description: "Practice PADI Open Water Diver hand signals",
     },
     {
-      title: "Settings",
-      href: "/",
-      description: "Manage your preferences and account settings",
+      title: "Quiz Hub",
+      href: "/quiz",
+      description: "Access all available quizzes and practice modes",
     },
   ];
 
@@ -126,10 +126,16 @@ export function Header({ navigationItems }: HeaderProps = {}) {
                   </h2>
                   <nav className="flex flex-col space-y-1">
                     <Link
-                      href="/"
+                      href="/quiz/signals"
                       className="flex items-center rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground"
                     >
-                      Dashboard
+                      Hand Signal Drills
+                    </Link>
+                    <Link
+                      href="/quiz"
+                      className="flex items-center rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground"
+                    >
+                      Quiz Hub
                     </Link>
                     <Link
                       href="/about"
