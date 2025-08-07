@@ -1,6 +1,7 @@
 {
-  "name": "frontend-vibes",
+  "name": "frontend-vibes-template",
   "version": "0.1.0",
+  "repository": "https://github.com/digitarald/frontend-vibes-template",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",

@@ -60,10 +60,10 @@ Use todo lists to break down planning and implementation tasks.
 
 # UI and Styling
 
-- Use Shadcn UI components, managing installed components via [components.json](../components.json), [components/ui](../src/components/ui/)
+- Use Shadcn UI components, managing installed components via `components.json`, `components/ui`
   - Install using `npx shadcn@latest`, `shadcn-ui` is deprecated.
 - Use Lucide icons.
-- Use `cn` (from [utils](../src/lib/utils.ts)) for conditional class names.
+- Use `cn` (from `src/lib/utils.ts`) for conditional class names.
 - Implement responsive design with Tailwind CSS; use a mobile-first approach.
 - Apply beautiful, balanced, and modern UI designs, imbued with best UX and typography practices.
 - For image placeholders use unsplash.com.
@@ -83,7 +83,7 @@ Use todo lists to break down planning and implementation tasks.
 
 # Key Conventions
 
-- Use OpenAI/OpenRouter for LLM functionality via the helper methods in [lib/llm.ts](/Users/digitarald/Developer/frontend-vibes/src/lib/llm.ts).
+- Use OpenAI/OpenRouter for LLM functionality via the helper methods in `src/lib/llm.ts`.
 - Limit 'use client':
   - Favor server components and Next.js SSR.
   - Use only for Web API access in small components.
