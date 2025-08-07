@@ -1,4 +1,4 @@
-import { UserProgress, QuizSession, PADITopic, TopicProgress, Achievement } from '@/types/quiz';
+import { UserProgress, QuizSession, TopicProgress, Achievement } from '@/types/quiz';
 
 const STORAGE_KEYS = {
   USER_PROGRESS: 'padi-quiz-progress',
@@ -234,7 +234,7 @@ export const progressUtils = {
   },
 
   // Check for new achievements
-  checkAchievements(progress: UserProgress, session: QuizSession): Achievement[] {
+  checkAchievements(progress: UserProgress): Achievement[] {
     const newAchievements: Achievement[] = [];
     const currentDate = new Date().toISOString();
     

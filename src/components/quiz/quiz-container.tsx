@@ -17,7 +17,7 @@ import {
   Award,
   TrendingUp
 } from 'lucide-react';
-import { QuizSession, QuizQuestion, UserProgress } from '@/types/quiz';
+import { QuizSession, UserProgress } from '@/types/quiz';
 import { storage, progressUtils } from '@/lib/quiz-storage';
 import { getDailyQuizQuestions, topicMetadata } from '@/lib/quiz-data';
 
@@ -118,7 +118,7 @@ export default function QuizContainer({ initialProgress }: QuizContainerProps) {
     const sessionPoints = progressUtils.calculateSessionPoints(completedSession);
     const updatedProgress = progressUtils.updateStreak(progress, session.date);
     const topicUpdatedProgress = progressUtils.updateTopicProgress(updatedProgress, completedSession);
-    const newAchievements = progressUtils.checkAchievements(topicUpdatedProgress, completedSession);
+    const newAchievements = progressUtils.checkAchievements(topicUpdatedProgress);
     
     const finalProgress: UserProgress = {
       ...topicUpdatedProgress,

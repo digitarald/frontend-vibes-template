@@ -93,6 +93,13 @@ export function Header({ navigationItems }: HeaderProps = {}) {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
+                  <Link href="/quiz" className={navigationMenuTriggerStyle()}>
+                    🤿 PADI Quiz
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild>
                   <Link href="/docs" className={navigationMenuTriggerStyle()}>
                     Documentation
                   </Link>
@@ -130,6 +137,12 @@ export function Header({ navigationItems }: HeaderProps = {}) {
                       className="flex items-center rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground"
                     >
                       Dashboard
+                    </Link>
+                    <Link
+                      href="/quiz"
+                      className="flex items-center rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground"
+                    >
+                      🤿 PADI Quiz
                     </Link>
                     <Link
                       href="/about"
