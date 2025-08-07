@@ -1,5 +1,5 @@
 ---
-tools: ['research', 'codebase', 'usages', 'create_pull_request_with_copilot', 'Todos']
+tools: ['research', 'codebase', 'usages', 'create_pull_request_with_copilot', 'todos']
 description: Explore feature ideas
 model: Claude Sonnet 4
 ---
