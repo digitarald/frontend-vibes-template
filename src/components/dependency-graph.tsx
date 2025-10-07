@@ -1,9 +1,6 @@
 "use client";
 
 import { Module } from "@/lib/dependency-data";
-import { Badge } from "@/components/ui/badge";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
-import { AlertTriangle, CheckCircle, Clock, Lock } from "lucide-react";
 
 interface DependencyGraphProps {
   modules: Module[];
@@ -28,22 +25,10 @@ function getStatusColor(status: Module['status'], isCritical: boolean): string {
   }
 }
 
-// Get status icon
-function getStatusIcon(status: Module['status']) {
-  switch (status) {
-    case 'migrated':
-      return <CheckCircle className="size-3" />;
-    case 'in-progress':
-      return <Clock className="size-3" />;
-    case 'blocked':
-      return <Lock className="size-3" />;
-    case 'not-started':
-      return <AlertTriangle className="size-3" />;
-  }
-}
+
 
 // Simple hierarchical layout
-function calculateLayout(modules: Module[], criticalPath: string[]) {
+function calculateLayout(modules: Module[]) {
   // Group modules by their dependency level
   const levels: string[][] = [];
   const placed = new Set<string>();
@@ -83,7 +68,6 @@ function calculateLayout(modules: Module[], criticalPath: string[]) {
   // Calculate positions
   const positions: Record<string, { x: number; y: number }> = {};
   const nodeWidth = 180;
-  const nodeHeight = 80;
   const levelGap = 150;
   const nodeGap = 20;
   
@@ -114,7 +98,7 @@ export function DependencyGraph({
   onModuleClick,
   selectedModuleId 
 }: DependencyGraphProps) {
-  const { positions, width, height } = calculateLayout(modules, criticalPath);
+  const { positions, width, height } = calculateLayout(modules);
   const moduleMap = new Map(modules.map(m => [m.id, m]));
   
   return (

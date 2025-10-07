@@ -301,10 +301,10 @@ function calculateDepth(
   if (visited.has(moduleId)) return 0;
   visited.add(moduleId);
 
-  const module = modules.find(m => m.id === moduleId);
-  if (!module || module.dependencies.length === 0) return 1;
+  const moduleItem = modules.find(m => m.id === moduleId);
+  if (!moduleItem || moduleItem.dependencies.length === 0) return 1;
 
-  const depths = module.dependencies.map(depId => 
+  const depths = moduleItem.dependencies.map(depId => 
     calculateDepth(depId, modules, new Set(visited))
   );
   return 1 + Math.max(...depths);
@@ -322,10 +322,10 @@ function hasCircularDependency(
   visited.add(moduleId);
   path.push(moduleId);
 
-  const module = modules.find(m => m.id === moduleId);
-  if (!module) return false;
+  const moduleItem = modules.find(m => m.id === moduleId);
+  if (!moduleItem) return false;
 
-  for (const depId of module.dependencies) {
+  for (const depId of moduleItem.dependencies) {
     if (hasCircularDependency(depId, modules, visited, [...path])) {
       return true;
     }
