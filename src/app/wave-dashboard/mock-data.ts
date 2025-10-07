@@ -266,12 +266,14 @@ export const mockBurndownData: BurndownDataPoint[] = (() => {
     });
     
     const remaining = totalModules - completedModules;
-    const ideal = Math.max(0, totalModules - (totalModules / totalDays) * i);
+    const weeksElapsed = i / 7;
+    const totalWeeks = totalDays / 7;
+    const ideal = Math.max(0, Math.round(totalModules - (totalModules / totalWeeks) * weeksElapsed));
     
     data.push({
       date: currentDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }),
       remaining: remaining,
-      ideal: Math.round(ideal),
+      ideal: ideal,
     });
   }
   

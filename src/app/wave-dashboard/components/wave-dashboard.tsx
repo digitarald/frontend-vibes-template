@@ -269,12 +269,12 @@ export function WaveDashboard() {
           <CardHeader className="pb-3">
             <CardDescription className="flex items-center gap-2">
               <Target className="h-4 w-4" />
-              Success Rate
+              Completion Rate
             </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">{metrics.successRate}%</div>
-            <p className="text-xs text-muted-foreground mt-1">CI/CD pass rate</p>
+            <p className="text-xs text-muted-foreground mt-1">modules completed</p>
           </CardContent>
         </Card>
       </div>
