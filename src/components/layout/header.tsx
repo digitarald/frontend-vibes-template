@@ -28,8 +28,8 @@ export function Header({ navigationItems }: HeaderProps = {}) {
   const defaultItems: NavigationItem[] = [
     {
       title: "Dashboard",
-      href: "/",
-      description: "View your analytics and metrics",
+      href: "/dashboard/water",
+      description: "Track your daily water intake",
     },
     {
       title: "Settings",
@@ -126,10 +126,10 @@ export function Header({ navigationItems }: HeaderProps = {}) {
                   </h2>
                   <nav className="flex flex-col space-y-1">
                     <Link
-                      href="/"
+                      href="/dashboard/water"
                       className="flex items-center rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground"
                     >
-                      Dashboard
+                      💧 Water Tracker
                     </Link>
                     <Link
                       href="/about"
