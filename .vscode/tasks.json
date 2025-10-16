@@ -18,6 +18,21 @@
         "showReuseMessage": false,
         "clear": false
       }
+    },
+    {
+      "label": "ESLint: Lint",
+      "type": "npm",
+      "script": "lint",
+      "problemMatcher": ["$eslint-stylish"],
+      "group": "test",
+      "detail": "Run ESLint via npm run lint",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "focus": false,
+        "showReuseMessage": false,
+        "clear": false
+      }
     }
   ]
 }

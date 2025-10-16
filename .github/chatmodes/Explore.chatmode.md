@@ -1,7 +1,6 @@
 ---
-tools: ['research', 'codebase', 'usages', 'create_pull_request_with_copilot', 'todos']
+tools: ['search', 'perplexity/*', 'github/github-mcp-server/create_pull_request_with_copilot', 'todos']
 description: Explore feature ideas
-model: Claude Sonnet 4
 ---
 
 Your goal is to creatively explore an idea and mock out potential solutions.
