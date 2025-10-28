@@ -14,7 +14,7 @@ export function TuningMeter({ tuningState }: TuningMeterProps) {
   const { cents, isInTune, targetString, detectedFrequency } = tuningState;
 
   // Calculate needle position (-50 to +50 cents mapped to 0-100%)
-  const needlePosition = Math.max(0, Math.min(100, (cents + 50) / 100 * 100));
+  const needlePosition = Math.max(0, Math.min(100, cents + 50));
 
   // Determine color based on tuning accuracy
   const getStatusColor = () => {

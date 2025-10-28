@@ -73,7 +73,7 @@ export function detectPitch(
     return null;
   }
 
-  const frequency = sampleRate / (bestOffset + minPeriod);
+  const frequency = sampleRate / bestOffset;
 
   // Validate frequency is in our expected range
   if (frequency < minFrequency || frequency > maxFrequency) {
