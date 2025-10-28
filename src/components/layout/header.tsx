@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Menu } from "lucide-react";
+import { Menu, Guitar } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
   NavigationMenu,
@@ -30,6 +30,11 @@ export function Header({ navigationItems }: HeaderProps = {}) {
       title: "Dashboard",
       href: "/",
       description: "View your analytics and metrics",
+    },
+    {
+      title: "Guitar Tuner",
+      href: "/dashboard/guitar-tuner",
+      description: "Interactive visual guitar tuning experience",
     },
     {
       title: "Settings",
@@ -130,6 +135,13 @@ export function Header({ navigationItems }: HeaderProps = {}) {
                       className="flex items-center rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground"
                     >
                       Dashboard
+                    </Link>
+                    <Link
+                      href="/dashboard/guitar-tuner"
+                      className="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground"
+                    >
+                      <Guitar className="h-4 w-4" />
+                      Guitar Tuner
                     </Link>
                     <Link
                       href="/about"
