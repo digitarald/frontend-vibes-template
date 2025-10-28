@@ -11,6 +11,8 @@ Next.js 15 (App Router), React 19, TypeScript, Shadcn UI ("new-york" style), Tai
 
 ## Architecture Patterns
 
+When asked to implement a feature in this template, replace the index page.
+
 ### Component Organization
 - **Layout Components**: `src/components/layout/` (e.g., `header.tsx` with NavigationMenu pattern)
 - **Feature Components**: Organize by feature in `src/components/[feature]/`
