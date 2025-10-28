@@ -276,7 +276,7 @@ export function AdvancedTuner() {
                           "text-3xl font-mono font-bold",
                           tuningStatus.inTune ? "text-green-600 dark:text-green-500" :
                           tuningStatus.cents > 0 ? "text-orange-600 dark:text-orange-500" :
-                          "text-blue-600 dark:bg-blue-500"
+                          "text-blue-600 dark:text-blue-500"
                         )}>
                           {tuningStatus.cents > 0 ? '+' : ''}{tuningStatus.cents}
                         </span>
