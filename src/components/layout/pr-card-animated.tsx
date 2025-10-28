@@ -52,7 +52,7 @@ export function PRCardAnimated({ pr, index, isMoving = false, isCelebrating = fa
               #{pr.number}
             </span>
           </div>
-          <h3 className="font-semibold text-sm leading-tight line-clamp-2 mb-1">
+          <h3 className="font-semibold text-sm leading-tight mb-1 overflow-hidden text-ellipsis" style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' } as React.CSSProperties}>
             {pr.title}
           </h3>
           <p className="text-xs text-primary font-medium">

@@ -89,7 +89,7 @@ export function createSimulator(
     lastUpdate: new Date(),
   };
   
-  let intervalId: NodeJS.Timeout | null = null;
+  let intervalId: number | null = null;
   
   function tick() {
     const { pulls: updatedPulls, changes } = simulatePRUpdates(state.pulls);
