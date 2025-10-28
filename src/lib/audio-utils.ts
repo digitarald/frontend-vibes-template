@@ -48,7 +48,7 @@ export function autoCorrelate(
     lastCorrelation = correlation;
   }
 
-  if (best_offset === -1) return -1;
+  if (best_offset <= 0) return -1;
 
   return sampleRate / best_offset;
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -18,6 +18,16 @@ export default function GuitarTunerPage() {
   const [targetString, setTargetString] = useState<string | null>(null);
   const [isInTune, setIsInTune] = useState<boolean>(false);
   const [isDetecting, setIsDetecting] = useState<boolean>(false);
+  const detectingTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (detectingTimeoutRef.current) {
+        clearTimeout(detectingTimeoutRef.current);
+      }
+    };
+  }, []);
 
   const handleDetection = useCallback(
     (data: {
@@ -35,9 +45,13 @@ export default function GuitarTunerPage() {
       setIsInTune(data.isInTune);
       setIsDetecting(true);
 
+      // Clear existing timeout
+      if (detectingTimeoutRef.current) {
+        clearTimeout(detectingTimeoutRef.current);
+      }
+
       // Reset detecting state after a short delay if no new detection
-      const timeout = setTimeout(() => setIsDetecting(false), 500);
-      return () => clearTimeout(timeout);
+      detectingTimeoutRef.current = setTimeout(() => setIsDetecting(false), 500);
     },
     []
   );

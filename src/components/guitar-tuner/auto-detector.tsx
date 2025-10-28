@@ -38,7 +38,9 @@ export function AutoDetector({ onDetection, isActive }: AutoDetectorProps) {
       try {
         const audioData = await initAudioContext();
         if (!audioData || !mounted) {
-          setError("Could not access microphone");
+          if (!audioData && mounted) {
+            setError("Microphone access denied or unavailable. Please check your browser permissions.");
+          }
           return;
         }
 

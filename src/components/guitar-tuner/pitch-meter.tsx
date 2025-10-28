@@ -1,6 +1,5 @@
 "use client";
 
-import { Progress } from "@/components/ui/progress";
 import { cn } from "@/lib/utils";
 
 interface PitchMeterProps {
@@ -13,10 +12,10 @@ export function PitchMeter({ cents, isInTune }: PitchMeterProps) {
   const percentage = ((cents + 50) / 100) * 100;
 
   // Determine color based on tuning accuracy
-  const getColor = () => {
-    if (isInTune) return "bg-green-500";
-    if (Math.abs(cents) < 10) return "bg-yellow-500";
-    return "bg-red-500";
+  const getIndicatorStyle = () => {
+    if (isInTune) return { backgroundColor: "rgb(34, 197, 94)" }; // green-500
+    if (Math.abs(cents) < 10) return { backgroundColor: "rgb(234, 179, 8)" }; // yellow-500
+    return { backgroundColor: "rgb(239, 68, 68)" }; // red-500
   };
 
   return (
@@ -28,12 +27,10 @@ export function PitchMeter({ cents, isInTune }: PitchMeterProps) {
 
         {/* Indicator */}
         <div
-          className={cn(
-            "absolute top-0 bottom-0 w-2 transition-all duration-150 ease-out",
-            getColor()
-          )}
+          className="absolute top-0 bottom-0 w-2 transition-all duration-150 ease-out"
           style={{
             left: `calc(${percentage}% - 4px)`,
+            ...getIndicatorStyle(),
           }}
         >
           <div className="absolute inset-0 animate-pulse" />
@@ -63,11 +60,13 @@ export function PitchMeter({ cents, isInTune }: PitchMeterProps) {
           </span>
           <span>Sharp</span>
         </div>
-        <div className="relative">
-          <Progress value={50} className="h-2 opacity-20" />
-          <Progress
-            value={percentage}
-            className={cn("h-2 absolute top-0 left-0 right-0", getColor())}
+        <div className="relative h-2 w-full overflow-hidden rounded-full bg-primary/20">
+          <div
+            className="h-full transition-all duration-150"
+            style={{
+              width: `${percentage}%`,
+              ...getIndicatorStyle(),
+            }}
           />
         </div>
       </div>
