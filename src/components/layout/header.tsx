@@ -32,6 +32,11 @@ export function Header({ navigationItems }: HeaderProps = {}) {
       description: "View your analytics and metrics",
     },
     {
+      title: "Guitar Tuner",
+      href: "/dashboard/guitar-tuner",
+      description: "Professional multi-mode guitar tuner with chromatic detection",
+    },
+    {
       title: "Settings",
       href: "/",
       description: "Manage your preferences and account settings",
@@ -130,6 +135,12 @@ export function Header({ navigationItems }: HeaderProps = {}) {
                       className="flex items-center rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground"
                     >
                       Dashboard
+                    </Link>
+                    <Link
+                      href="/dashboard/guitar-tuner"
+                      className="flex items-center rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground"
+                    >
+                      Guitar Tuner
                     </Link>
                     <Link
                       href="/about"
