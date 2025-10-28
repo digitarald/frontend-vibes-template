@@ -7,6 +7,12 @@ import { PullRequest } from "@/data/pulls";
 function getTimeAgo(date: Date): string {
   const now = new Date();
   const diffMs = now.getTime() - date.getTime();
+  
+  // Handle future dates or invalid timestamps
+  if (diffMs < 0) {
+    return 'just now';
+  }
+  
   const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
   const diffDays = Math.floor(diffHours / 24);
 

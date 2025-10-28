@@ -27,10 +27,12 @@ export function KanbanColumn({ title, prs }: KanbanColumnProps) {
     return () => clearInterval(interval);
   }, [prs.length]);
 
-  // Calculate visible PRs based on current index
+  // Calculate visible PRs using modulo arithmetic for efficient circular access
   const visiblePRs = prs.length <= itemsPerView
     ? prs
-    : [...prs, ...prs].slice(currentIndex, currentIndex + itemsPerView);
+    : Array.from({ length: itemsPerView }, (_, i) => 
+        prs[(currentIndex + i) % prs.length]
+      );
 
   return (
     <div className="flex flex-col h-full border-r border-border/20 last:border-r-0">
@@ -46,7 +48,7 @@ export function KanbanColumn({ title, prs }: KanbanColumnProps) {
       <div className="flex-1 overflow-hidden px-8 py-8">
         <div className="space-y-6 transition-opacity duration-500">
           {visiblePRs.map((pr, idx) => (
-            <PRCardMinimal key={`${pr.id}-${idx}`} pr={pr} />
+            <PRCardMinimal key={`${pr.id}-${currentIndex}-${idx}`} pr={pr} />
           ))}
         </div>
       </div>
