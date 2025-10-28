@@ -1,22 +1,48 @@
 import { Metadata } from 'next';
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+import { mockPullRequests } from '@/data/pulls';
+import { MetricsHeader } from '@/components/layout/metrics-header';
+import { KanbanColumnDense } from '@/components/layout/kanban-column-dense';
 
 export const metadata: Metadata = {
-  title: 'Frontend Vibes',
-  description: 'A modern web application built with Next.js, React, and Shadcn UI',
+  title: 'PR Dashboard - Frontend Vibes',
+  description: 'Data-dense TV dashboard for GitHub pull requests',
 };
 
 export default function Home() {
+  const completedPRs = mockPullRequests.filter(pr => pr.state === 'completed');
+  const inReviewPRs = mockPullRequests.filter(pr => pr.state === 'in-review');
+  const draftPRs = mockPullRequests.filter(pr => pr.state === 'draft');
+
   return (
-    <div className="flex min-h-[50vh] items-center justify-center">
-      <div className="text-center space-y-4">
-        <h1 className="text-4xl font-bold tracking-tight">✨ Here Be Vibes 🎉</h1>
-        <p className="text-muted-foreground text-lg">Your template is ready 🚀</p>
-        <div className="w-24 h-1 bg-primary mx-auto rounded"></div>
-        <p className="text-sm text-muted-foreground max-w-md">
-          Start building your next great project. This is your clean slate. 🎨
-        </p>
+    <div className="space-y-6">
+      <div className="flex items-center justify-between">
+        <h1 className="text-3xl font-bold">Pull Request Dashboard</h1>
+        <div className="text-sm text-muted-foreground">
+          Total: {mockPullRequests.length} PRs
+        </div>
+      </div>
+      
+      <MetricsHeader pulls={mockPullRequests} />
+      
+      <div className="grid grid-cols-3 gap-4">
+        <KanbanColumnDense
+          title="Completed"
+          pulls={completedPRs}
+          colorClass="bg-chart-1/10"
+          borderColorClass="border-chart-1/30"
+        />
+        <KanbanColumnDense
+          title="In Review"
+          pulls={inReviewPRs}
+          colorClass="bg-chart-2/10"
+          borderColorClass="border-chart-2/30"
+        />
+        <KanbanColumnDense
+          title="Draft"
+          pulls={draftPRs}
+          colorClass="bg-chart-3/10"
+          borderColorClass="border-chart-3/30"
+        />
       </div>
     </div>
   );
