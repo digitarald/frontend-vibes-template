@@ -19,7 +19,7 @@ export function KanbanColumnDense({ title, pulls, colorClass, borderColorClass }
         </div>
       </div>
       
-      <ScrollArea className="flex-1 h-[calc(100vh-250px)]">
+      <ScrollArea className="flex-1 h-[calc(100vh-16rem)]">
         <div className="p-4 space-y-3">
           {pulls.map(pr => (
             <PrCardDetailed key={pr.id} pr={pr} />

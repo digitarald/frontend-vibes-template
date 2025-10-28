@@ -34,7 +34,14 @@ export function PrCardDetailed({ pr }: PrCardDetailedProps) {
         <div className="flex items-start gap-3">
           <Avatar className="size-10">
             <AvatarImage src={pr.author.avatar} alt={pr.author.name} />
-            <AvatarFallback>{pr.author.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+            <AvatarFallback>
+              {pr.author.name
+                .split(' ')
+                .map(n => n[0] || '')
+                .join('')
+                .slice(0, 2)
+                .toUpperCase()}
+            </AvatarFallback>
           </Avatar>
           <div className="flex-1 min-w-0">
             <div className="font-semibold text-sm mb-0.5">{pr.author.name}</div>
@@ -57,7 +64,7 @@ export function PrCardDetailed({ pr }: PrCardDetailedProps) {
               style={{ 
                 borderColor: label.color,
                 color: label.color,
-                backgroundColor: `${label.color}15`
+                backgroundColor: `color-mix(in srgb, ${label.color} 8%, transparent)`
               }}
             >
               {label.name}

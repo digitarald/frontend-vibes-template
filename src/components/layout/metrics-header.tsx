@@ -13,7 +13,8 @@ function calculateAverageTime(pulls: PullRequest[], state: PullRequest['state'])
   const now = new Date();
   const totalHours = statePulls.reduce((sum, pr) => {
     const created = new Date(pr.createdAt);
-    const hours = (now.getTime() - created.getTime()) / (1000 * 60 * 60);
+    const endTime = state === 'completed' ? new Date(pr.updatedAt) : now;
+    const hours = (endTime.getTime() - created.getTime()) / (1000 * 60 * 60);
     return sum + hours;
   }, 0);
   
