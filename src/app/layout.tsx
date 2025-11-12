@@ -14,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="antialiased min-h-screen bg-background font-sans">
-        <main className="flex-1 py-6 px-6 md:px-8 lg:px-10">{children}</main>
+        {children}
       </body>
     </html>
   );
