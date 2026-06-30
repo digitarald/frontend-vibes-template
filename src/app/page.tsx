@@ -1,23 +1,12 @@
-import { Metadata } from 'next';
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+import type { Metadata } from "next";
+
+import { CommunityDashboard } from "@/components/github-dashboard/community-dashboard";
 
 export const metadata: Metadata = {
-  title: 'Frontend Vibes',
-  description: 'A modern web application built with Next.js, React, and Shadcn UI',
+  title: "GitHub Community Dashboard",
+  description: "TV-optimized dashboard for tracking GitHub community health and contribution momentum.",
 };
 
 export default function Home() {
-  return (
-    <div className="flex min-h-[50vh] items-center justify-center">
-      <div className="text-center space-y-4">
-        <h1 className="text-4xl font-bold tracking-tight">✨ Here Be Vibes 🎉</h1>
-        <p className="text-muted-foreground text-lg">Your template is ready 🚀</p>
-        <div className="w-24 h-1 bg-primary mx-auto rounded"></div>
-        <p className="text-sm text-muted-foreground max-w-md">
-          Start building your next great project. This is your clean slate. 🎨
-        </p>
-      </div>
-    </div>
-  );
+  return <CommunityDashboard />;
 }
