@@ -198,6 +198,8 @@ const toneClasses: Record<StatCardData["tone"], string> = {
   watch: "border-amber-500/30 bg-amber-500/10 text-amber-100",
 };
 
+const attentionRadarCompletion = 94;
+
 export function CommunityDashboard() {
   return (
     <section className="relative mx-auto flex min-h-[calc(100vh-2rem)] w-full max-w-[1800px] overflow-hidden rounded-[2rem] border border-white/10 bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.18),_transparent_28%),linear-gradient(135deg,_rgba(9,16,32,0.98),_rgba(13,25,46,0.98)_48%,_rgba(25,47,40,0.94))] p-4 text-white shadow-2xl shadow-black/30 md:p-6 xl:p-8">
@@ -250,7 +252,10 @@ export function CommunityDashboard() {
                   <Clock3 className="size-8 text-primary" />
                 </div>
                 <div className="h-2 overflow-hidden rounded-full bg-white/10">
-                  <div className="h-full w-[94%] rounded-full bg-gradient-to-r from-primary via-fuchsia-400 to-cyan-300 animate-[dashboard-pan_6s_linear_infinite]" />
+                  <div
+                    className="h-full rounded-full bg-gradient-to-r from-primary via-fuchsia-400 to-cyan-300 animate-[dashboard-pan_6s_linear_infinite]"
+                    style={{ width: `${attentionRadarCompletion}%` }}
+                  />
                 </div>
               </div>
             </CardContent>
